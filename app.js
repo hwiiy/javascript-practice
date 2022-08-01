@@ -1,15 +1,7 @@
-const hello = document.querySelector(".hello:first-child h1")
+const h1 = document.querySelector(".hello h1");
 
-
-function handleClick () {
-    const CurrentColor = hello.style.color;
-    let Newcolor;
-    if(CurrentColor === "blue") {
-        Newcolor = "tomato";
-    } else {
-        Newcolor = "blue";
-    }
-     hello.style.color = Newcolor ;
+function handleClick() {
+    h1.className = "active";
 }
 
-    hello.onclick = handleClick;
+h1.addEventListener("click",handleClick);
