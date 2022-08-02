@@ -5,6 +5,9 @@ h1 {
     color: lightskyblue;
 }
 
-.active {
+.clicked {
     color: tomato;
+}
+.sexy-font {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
