@@ -1,12 +1,15 @@
 const loginForm = document.querySelector("#login_form");
-const loginInput = document.querySelector("#login_form input");
+const loginInput = loginForm.querySelector("input");
+const greeting = document.getElementById("greeting");
 
-
-function onLoginSubmitForm(event) {
-   event.preventDefault(); //어떤 event 들이든지 default behavior을 막는 함수
+function handleFormDisapper(event){
+    event.preventDefault();
     const username = loginInput.value;
-    loginForm.classList.add("hidden");
-    console.log(username)
+    loginForm.classList.add("hidden")//loginForm 에 class 명으로 hidden 추가하는 것임!
+    greeting.innerText = "Hello! " + username;
+    greeting.classList.remove("hidden");
 }
 
-loginForm.addEventListener("submit",onLoginSubmitForm)
+loginForm.addEventListener("submit",handleFormDisapper)
+
+//form tag 이니까 click 아니고 submit 임
