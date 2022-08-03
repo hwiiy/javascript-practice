@@ -1,9 +1,12 @@
+const loginForm = document.querySelector("#login_form");
 const loginInput = document.querySelector("#login_form input");
-const loginBtn = document.querySelector("#login_form button");
 
 
-function handleOnclickBtn() {
-    console.log(loginInput.value,"click!!" );
+function onLoginSubmitForm(event) {
+   event.preventDefault(); //어떤 event 들이든지 default behavior을 막는 함수
+    const username = loginInput.value;
+    loginForm.classList.add("hidden");
+    console.log(username)
 }
 
-loginBtn.addEventListener("click",handleOnclickBtn);
+loginForm.addEventListener("submit",onLoginSubmitForm)
