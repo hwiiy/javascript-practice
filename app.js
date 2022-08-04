@@ -1,15 +1,29 @@
-const loginForm = document.querySelector("#login_form");
-const loginInput = loginForm.querySelector("input");
-const greeting = document.getElementById("greeting");
+const h1 = document.querySelector("h1");
 
-function handleFormDisapper(event){
-    event.preventDefault();
-    const username = loginInput.value;
-    loginForm.classList.add("hidden")//loginForm 에 class 명으로 hidden 추가하는 것임!
-    greeting.innerText = "Hello! " + username;
-    greeting.classList.remove("hidden");
+function mouseup() {
+    h1.style.color = "gray"; 
+    h1.innerText = "The mouse is here!"
 }
 
-loginForm.addEventListener("submit",handleFormDisapper)
+function mousegone() {
+    h1.style.color = "tomato";
+    h1.innerText = "The mouse is gone!"
+}
 
-//form tag 이니까 click 아니고 submit 임
+function rightClick(){
+    h1.innerText = "rightClick!"
+    h1.style.color = "gold"
+    
+}
+
+function resize () {
+    h1.innerText = "resized!!"
+    h1.style.color = "blue"
+}
+
+console.dir(h1);
+
+window.addEventListener("resize",resize)
+h1.addEventListener("mouseenter",mouseup)
+h1.addEventListener("mouseleave",mousegone)
+h1.addEventListener("contextmenu",rightClick) //마우스 우클릭시  이벤트
