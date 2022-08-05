@@ -1,29 +1,20 @@
-const h1 = document.querySelector("h1");
+const h1 = document.querySelector("body");
 
-function mouseup() {
-    h1.style.color = "gray"; 
-    h1.innerText = "The mouse is here!"
+
+function handle() {
+    var wframe = window.innerWidth;
+
+    console.log(wframe);
+    h1.classList.add("red","blue")
+
+    if (wframe <= 1000){
+        h1.classList.remove("blue") //red 가 적용
+    } else if(wframe >1000 && wframe <=1500) {
+        h1.classList.remove("red");
+        h1.classList.add("blue")
+    } else {
+        h1.classList.remove("red","blue")
+    }
 }
 
-function mousegone() {
-    h1.style.color = "tomato";
-    h1.innerText = "The mouse is gone!"
-}
-
-function rightClick(){
-    h1.innerText = "rightClick!"
-    h1.style.color = "gold"
-    
-}
-
-function resize () {
-    h1.innerText = "resized!!"
-    h1.style.color = "blue"
-}
-
-console.dir(h1);
-
-window.addEventListener("resize",resize)
-h1.addEventListener("mouseenter",mouseup)
-h1.addEventListener("mouseleave",mousegone)
-h1.addEventListener("contextmenu",rightClick) //마우스 우클릭시  이벤트
+window.addEventListener("resize",handle)
