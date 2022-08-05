@@ -1,6 +1,6 @@
 
 body {
-    background-color: gold;
+    background-color: green;
 }
 h1 {
     color: white;
@@ -10,9 +10,10 @@ background-color: tomato;
 }
 
 .blue {
-    background-color: lightblue;
+    background-color: rgb(5, 169, 223);
 }
 
-.purple {
-    background-color: blueviolet;
+
+.gold {
+    background-color: gold;
 }
