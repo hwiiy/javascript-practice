@@ -1,21 +1,35 @@
-const h1 = document.querySelector("body");
+const loginForm = document.querySelector("#login_form")
+const loginInput = document.querySelector(".loginInput")
+const greeting = document.getElementById("greeting")
 
 
-function handle() {
-    var wframe = window.innerWidth;
+const USERNAME_KEY = "username";
+const HIDDEN_CLASS = "hidden";
 
-    console.log(wframe);
-    h1.classList.add("red","blue","gold")
 
-    if (wframe <= 1000){
-        h1.classList.remove("blue","gold") //red 가 적용
-    } else if(wframe >1000 && wframe <=1500) {
-        h1.classList.add("blue")  // blue 적용
-        h1.classList.remove("red","gold"); //red 지움
-    } else {
-        h1.classList.remove("blue")
-        h1.classList.add("gold")
-    }
+
+function handleFormDisappear (){
+    event.preventDefault();
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY,username) //DB에 저장하는 항목!
+    loginForm.classList.add(HIDDEN_CLASS);
+    paintGreetings(username);
 }
 
-window.addEventListener("resize",handle)
+// 같은 내용 반복돼서 함수로 만들어 줬음.
+function paintGreetings (username) {
+    greeting.innerText = `Hello! ${username}`;
+    greeting.classList.remove(HIDDEN_CLASS)
+}
+
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASS)
+    loginForm.addEventListener("submit",handleFormDisappear)
+
+} else {
+    paintGreetings(savedUsername);
+
+}
