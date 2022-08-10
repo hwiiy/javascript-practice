@@ -10,11 +10,13 @@ function dayCounter (){
     const diffhour = Math.floor(diff/(1000*60*60)%24)
     const diffDay = Math.floor(diff/(1000*60*60*24))
 
+    
 
  
      left.innerText = `${diffDay}일 ${diffhour}시간 ${diffmin}분 ${diffsec}초 남았습니다.`
     
 }
+dayCounter();
 
 setInterval(dayCounter,1000)
 
