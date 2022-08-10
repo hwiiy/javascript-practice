@@ -1,43 +1,22 @@
-const rangeForm = document.querySelector("#range")
-const rangeInput = document.querySelector("#range input")
+const left = document.querySelector("#left_day")
 
-const guessForm = document.querySelector("#guess")
-const guessInput = document.querySelector("#guess input")
+function dayCounter (){
+    const date = new Date(); //today
+    const christmas = new Date("2022-12-25");
+    const diff = christmas - date; //ms 단위로 반환해줌
 
-const resultMessage = document.getElementById("result")
-const final = document.getElementById("winOrLose")
+    const diffsec = Math.floor(diff/1000%60)
+    const diffmin = Math.floor(diff/(1000*60)%60)
+    const diffhour = Math.floor(diff/(1000*60*60)%24)
+    const diffDay = Math.floor(diff/(1000*60*60*24))
 
 
-//submit은 enter를 누르거나 button을 클릭할 때 모두 적용 됨 !
-
-// range form 관련
-
-function onRangeSubmit(){
-event.preventDefault();
-const rangeValue = rangeInput.value;
-console.log(rangeValue);
-}
-rangeForm.addEventListener("submit",onRangeSubmit);
-
-// guess form 관련
-
-function onGuessSubmit(){
-    const UserGuessNumber = guessInput.value;
-    const rangeValue = rangeInput.value;
-    event.preventDefault();
+ 
+     left.innerText = `${diffDay}일 ${diffhour}시간 ${diffmin}분 ${diffsec}초 남았습니다.`
     
-    const machine = Math.floor(Math.random() * rangeValue)
-
-    resultMessage.innerText = `You chose : ${UserGuessNumber}, the machine chose : ${machine}`
-    resultMessage.classList.remove("hidden")
-
-    if(UserGuessNumber == machine){
-        final.classList.remove("hidden");
-        final.innerText = "You win!"
-    } else {
-        final.classList.remove("hidden");
-        final.innerText = "You lost!"
-    }
 }
-guessForm.addEventListener("submit",onGuessSubmit);
+
+setInterval(dayCounter,1000)
+
+
 
