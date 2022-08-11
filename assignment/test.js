@@ -1,4 +1,4 @@
-
+const body = document.querySelector("body");
 const colors = [
     "#ef5777",
     "#575fcf",
@@ -23,9 +23,12 @@ const colors = [
   const button = document.querySelector("button");
 
   function showColor() {
-    const randomColor = Math.floor(Math.random() * colors.length);
-    document.body.style.backgroundColor = colors[randomColor];
+    const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
+    const randomColor2 = colors[Math.floor(Math.random() * colors.length)];
+
+    body.style.background = `linear-gradient(90deg,${randomColor1},${randomColor2})`
   }
+
   button.addEventListener("click", showColor);
   
   
