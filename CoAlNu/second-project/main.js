@@ -5,11 +5,7 @@ let taskList = [];
 
 addBtn.addEventListener("click", addTask);
 
-taskInput.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-      addTask(event);
-    }
-  });
+
 
 function addTask() {
  
@@ -21,6 +17,7 @@ function addTask() {
     taskList.push(task);
     console.log(taskList)
     render();
+    taskInput.value="";
 }
 
 function render() {
@@ -51,8 +48,6 @@ function render() {
             `
         }
     }
-
-
     document.getElementById("task-board").innerHTML = resultHTML;
 }
 

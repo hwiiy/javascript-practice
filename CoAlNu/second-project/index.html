@@ -16,8 +16,7 @@
         <h1>TODOLIST PAGE</h1>
 
         <div class="input-area">
-            <input type="text" class="task-input" />
-            <label for="task-label"><span>오늘의 할일은?</span></label>
+            <input type="text" class="task-input" onkeyup="if(window.event.keyCode==13){(addTask())}" />
             <button class="button-add" type="button">+</button>
         </div>
 
