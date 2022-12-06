@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+}
+
+.title{
+    background-color: #B5AC9E;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    color:#685A51
+}
+.title:hover{
+    color: white;
+}
+
+#chance_area {
+    font-size: 20px;
+}
+
+#user_input{
+    width: 200px;
+    height: 30px;
+    border:  none;
+    border-bottom:1px solid rgba(0, 0, 0, 0.4);
+}
+
+#user_input:focus{
+    background-color: #F6F3E5;
+  outline: none;
+  opacity: 50%;
+}
+#result_wrap{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+#result{
+    height: 30px;
+    font-size: 20px;
+    width: 400px;
+    background-color: #F6F3E5;
+    color:#685A51;
+}
+
+#playbtn,#resetbtn{
+    border: none;
+    width: 50px;
+    height: 25px;
+    margin: 2px;
+}
+
+#playbtn:hover,#resetbtn:hover{
+    background-color: gray;
+    color: white;
+}

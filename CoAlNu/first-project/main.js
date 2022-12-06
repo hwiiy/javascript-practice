@@ -56,7 +56,7 @@ function play(){
       result.textContent = "Game Over!";
     }
     history.push(userValue);
-   
+
 }
 
 function reset(){
