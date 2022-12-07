@@ -1,9 +1,9 @@
 
 let news = [];
 const getLatestNews = async () => {
-    let url = new URL(`https://api.newscatcherapi.com/v2/latest_headlines?countries=EN&topic=sport&page_size=10`);
+    let url = new URL(`https://api.newscatcherapi.com/v2/search?q=Apple&from='2021/12/15' &countries=KO&page_size=10`);
     let header = new Headers({
-        'x-api-key':'mt8lpJy_Hk9-iTWdFflavsz5kl0ooGh70i5QRkda2HY',
+        'x-api-key':'IYlEal90kQMPXkG8o8dZO3sUAATAcnSN90PuGnFOaM8',
     });
     let response = await fetch(url,{headers:header});
     let data = await response.json();
